@@ -5,9 +5,15 @@ interface RepositoriesState {
     error: string | null;
     data: string[];
   }
+
+const initialState = {
+  loading: false,
+  error: null,
+  data: []
+} 
   
-const reducer = (
-    state: RepositoriesState,
+const repositoriesReducer = (
+    state: RepositoriesState = initialState,
     action: Action
   ): RepositoriesState => {
     switch (action.type) {
@@ -22,5 +28,5 @@ const reducer = (
     }
   };
   
-  export default reducer;
+  export default repositoriesReducer;
   
